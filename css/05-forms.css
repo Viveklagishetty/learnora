@@ -1,0 +1,132 @@
+/* FORMS */
+.bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--br);
+  background: var(--surf);
+  color: var(--tx);
+  font: inherit;
+  font-size: 0.95rem;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+  border-color: var(--p);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--p) 18%, transparent);
+}
+
+.bar input {
+  flex: 1 1 240px;
+  width: auto;
+}
+
+.bar select {
+  width: auto;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+
+.pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--br);
+  background: var(--surf);
+  color: var(--tx);
+  cursor: pointer;
+  font:
+    500 0.88rem Inter,
+    sans-serif;
+  transition: 0.2s;
+}
+
+.pill.on {
+  background: var(--tx);
+  color: var(--bg);
+  border-color: var(--tx);
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.auth .side {
+  background: linear-gradient(145deg, #312e81, #4f46e5 50%, #0d9488);
+  color: #fff;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth .side p {
+  color: #dfe3ff;
+}
+
+.auth .side::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  right: -120px;
+  bottom: -120px;
+  animation: float 7s ease-in-out infinite;
+}
+
+.auth .form {
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.auth .box {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 860px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .auth .side {
+    padding: 36px 24px;
+  }
+}

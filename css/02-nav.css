@@ -1,0 +1,180 @@
+/* NAV */
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 50;
+  background: color-mix(in srgb, var(--surf) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--br);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 72px;
+}
+
+.logo {
+  font:
+    800 1.25rem "Plus Jakarta Sans",
+    sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--p), var(--ac));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+.links {
+  display: flex;
+  gap: 6px;
+  margin: 0 auto 0 12px;
+}
+
+.links a {
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--mu);
+  transition: 0.2s;
+}
+
+.links a:hover,
+.links a.on {
+  color: var(--p);
+  background: color-mix(in srgb, var(--p) 10%, transparent);
+}
+
+.acts {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 19px;
+  border-radius: 10px;
+  border: 1px solid var(--br);
+  background: var(--surf);
+  color: var(--tx);
+  font:
+    600 0.92rem Inter,
+    sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh);
+}
+
+.btn.pri {
+  background: linear-gradient(135deg, var(--p), var(--p2));
+  color: #fff;
+  border: 0;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--p) 22%, transparent);
+}
+
+.btn.sm {
+  padding: 8px 14px;
+}
+
+.btn.block {
+  width: 100%;
+}
+
+.burger {
+  display: none;
+  min-width: 42px;
+  min-height: 40px;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.burger.is-open {
+  font-size: 1.45rem;
+}
+
+@media (max-width: 860px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surf);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--br);
+    box-shadow: 0 16px 24px rgba(19, 28, 54, 0.08);
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .burger {
+    display: inline-flex;
+  }
+
+  .acts .hide {
+    display: none;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    gap: 8px;
+  }
+
+  .nav .lg {
+    height: 28px;
+  }
+
+  .acts {
+    gap: 5px;
+  }
+
+  .acts > .btn.sm {
+    padding: 8px 10px;
+  }
+
+  .acts #theme {
+    width: 36px;
+    min-width: 36px;
+    padding: 8px;
+  }
+
+  .burger {
+    min-width: 38px;
+    min-height: 38px;
+  }
+}

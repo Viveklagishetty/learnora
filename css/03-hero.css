@@ -1,0 +1,83 @@
+/* HERO */
+.hero {
+  padding: 80px 0 56px;
+  background:
+    radial-gradient(
+      900px 400px at 85% -10%,
+      color-mix(in srgb, var(--p) 22%, transparent),
+      transparent
+    ),
+    radial-gradient(
+      600px 300px at 0 100%,
+      color-mix(in srgb, var(--ac) 18%, transparent),
+      transparent
+    );
+}
+
+.hgrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.grad {
+  background: linear-gradient(90deg, var(--p), var(--ac));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.stats b {
+  font:
+    800 1.6rem "Plus Jakarta Sans",
+    sans-serif;
+  display: block;
+}
+
+.stats span {
+  font-size: 0.82rem;
+  color: var(--mu);
+}
+
+.hart {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--sh);
+  aspect-ratio: 4 / 3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.chip-f {
+  position: absolute;
+  background: var(--surf);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: var(--sh);
+  animation: float 5s ease-in-out infinite;
+}
+
+@media (max-width: 860px) {
+  .hgrid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+}

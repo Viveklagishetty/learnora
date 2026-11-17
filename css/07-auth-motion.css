@@ -1,0 +1,68 @@
+/* AUTH MOTION */
+.auth .side {
+  background-size: cover;
+}
+
+.auth .side > :not(.chip-f) {
+  position: relative;
+  z-index: 1;
+}
+
+.auth .side .chip-f {
+  color: var(--tx);
+  z-index: 1;
+}
+
+.auth .side .ring {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 2px dashed rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  left: -100px;
+  bottom: -110px;
+  animation: spin 24s linear infinite;
+}
+
+.auth .box > * {
+  opacity: 0;
+  animation: up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.auth input:focus,
+.auth select:focus {
+  transform: none;
+}
+
+.btn.load {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.btn.load::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .auth .side .chip-f {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth .box > * {
+    opacity: 1 !important;
+  }
+}

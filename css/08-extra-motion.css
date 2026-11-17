@@ -1,0 +1,272 @@
+/* EXTRA MOTION */
+#prog {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--p), var(--ac));
+  z-index: 70;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bgmove {
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(44px);
+  opacity: 0.4;
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  to {
+    transform: translate(70px, -50px) scale(1.25);
+  }
+}
+
+.hgrid {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .up {
+  opacity: 0;
+  transform: translateY(34px);
+  animation: up 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.grad {
+  background-image: linear-gradient(90deg, var(--p), var(--ac), var(--p));
+  background-size: 100% auto;
+}
+
+@keyframes gs {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.rip {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(127, 127, 255, 0.45);
+  transform: scale(0);
+  animation: rip 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rip {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.links a {
+  position: relative;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--p);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.links a:hover::after,
+.links a.on::after {
+  transform: scaleX(1);
+}
+
+.logo i {
+  transition: transform 0.7s;
+}
+
+.logo:hover i {
+  transform: rotate(360deg) scale(1.12);
+}
+
+.ic {
+  transition: transform 0.4s;
+}
+
+.card:hover .ic,
+.rv:hover > .ic {
+  transform: translateY(-6px) rotate(-8deg) scale(1.12);
+}
+
+.rv.l:not(.in) {
+  transform: translateX(-44px);
+}
+
+.rv.r:not(.in) {
+  transform: translateX(44px);
+}
+
+.rv.z:not(.in) {
+  transform: scale(0.88);
+}
+
+.rv.done {
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.3s,
+    opacity 0.7s;
+}
+
+.card {
+  will-change: transform;
+}
+
+.mq {
+  overflow: hidden;
+  border-block: 1px solid var(--br);
+  background: var(--surf);
+  padding: 14px 0;
+  white-space: nowrap;
+}
+
+.mq div {
+  display: inline-block;
+  animation: mq 30s linear infinite;
+}
+
+.mq span {
+  margin: 0 26px;
+  font-weight: 600;
+  color: var(--mu);
+}
+
+.mq:hover div {
+  animation-play-state: paused;
+}
+
+@keyframes mq {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#top {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--p);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.4) translateY(30px);
+  transition: 0.35s;
+  z-index: 55;
+  box-shadow: var(--sh);
+}
+
+#top.show {
+  opacity: 1;
+  transform: none;
+}
+
+#top:hover {
+  animation: float 1.2s infinite;
+}
+
+.cta {
+  background-size: cover;
+}
+
+.pill {
+  transition: 0.2s;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+}
+
+.auth .side::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  left: -80px;
+  top: -60px;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.auth .side h1,
+.auth .side p {
+  animation: up 0.9s both;
+}
+
+.auth .side p {
+  animation-delay: 0.2s;
+}
+
+summary:hover {
+  color: var(--p);
+}
+
+details {
+  transition: box-shadow 0.3s;
+}
+
+details[open] {
+  box-shadow: var(--sh);
+}
+
+footer a {
+  transition:
+    transform 0.25s,
+    color 0.25s;
+}
+
+footer a:hover {
+  transform: translateX(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rv.l,
+  .rv.r,
+  .rv.z {
+    transform: none !important;
+  }
+}

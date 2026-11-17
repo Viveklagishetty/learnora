@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Stackly — Learning for every stage of life</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/01-tokens.css" />
+    <link rel="stylesheet" href="css/02-nav.css" />
+    <link rel="stylesheet" href="css/03-hero.css" />
+    <link rel="stylesheet" href="css/04-cards.css" />
+    <link rel="stylesheet" href="css/05-forms.css" />
+    <link rel="stylesheet" href="css/06-faq-footer.css" />
+    <link rel="stylesheet" href="css/07-auth-motion.css" />
+    <link rel="stylesheet" href="css/08-extra-motion.css" />
+    <link rel="stylesheet" href="css/09-motion.css" />
+  </head>
+  <body class="is-loading">
+    <div id="loader" class="loader" aria-live="polite" aria-busy="true">
+      <div class="loader-shell">
+        <div class="loader-mark">
+          <div class="loader-ring"></div>
+          <img class="loader-logo" src="assets/logo.png" alt="Stackly" />
+        </div>
+        <span class="loader-text">Preparing your learning space</span>
+      </div>
+    </div>
+
+    <header>
+      <div class="wrap nav">
+        <a class="logo" href="#home"><img class="lg" alt="Stackly" /></a>
+        <nav class="links" id="links">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#paths">Learning Path</a>
+          <a href="#about">About Us</a>
+          <a href="#help">Help</a>
+        </nav>
+        <div class="acts">
+          <button class="btn sm" id="theme" aria-label="Toggle theme">◐</button>
+          <a class="btn sm hide" href="#login">Login</a>
+          <a class="btn sm pri" href="#signup">Sign Up</a>
+          <button class="btn sm burger" id="bg" aria-label="Open menu" aria-controls="links" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="app" class="app-shell"></main>
+
+    <footer>
+      <div class="wrap footer-cta-wrap">
+        <div class="cta footer-cta rv">
+          <h2>Make room for something new.</h2>
+          <p>Your next skill starts with one small step.</p>
+          <a class="btn" href="#courses">Explore Courses</a>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="fg">
+          <div>
+            <div class="logo"><img class="lg w" alt="Stackly" /></div>
+            <p class="footer-tagline">Learning for every stage of life.</p>
+          </div>
+          <div>
+            <h3>Discover</h3>
+            <a href="#courses">Courses</a>
+            <a href="#paths">Learning Path</a>
+            <a href="#about">About Us</a>
+          </div>
+          <div>
+            <h3>Help &amp; support</h3>
+            <a href="#help">Contact Support</a>
+            <a href="#help">FAQ</a>
+          </div>
+          <div>
+            <h3>Legal</h3>
+            <a href="#help">Privacy Policy</a>
+            <a href="#help">Terms</a>
+          </div>
+          <div>
+            <h3>Follow us</h3>
+            <a href="#home">LinkedIn</a>
+            <a href="#home">Instagram</a>
+            <a href="#home">YouTube</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Stackly. All rights reserved.</p>
+          <p>Made for curious minds.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="prog"></div>
+    <button id="top" aria-label="Back to top">↑</button>
+    <div id="toast"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages/_registry.js"></script>
+    <script src="js/pages/auth.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/courses.js"></script>
+    <script src="js/pages/paths.js"></script>
+    <script src="js/pages/about.js"></script>
+    <script src="js/pages/help.js"></script>
+    <script src="js/pages/login.js"></script>
+    <script src="js/pages/signup.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
